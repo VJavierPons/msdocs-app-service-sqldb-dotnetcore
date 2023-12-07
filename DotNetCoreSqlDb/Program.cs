@@ -12,7 +12,6 @@ builder.Services.AddStackExchangeRedisCache(options =>
     options.InstanceName = "SampleInstance";
 });
 
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
