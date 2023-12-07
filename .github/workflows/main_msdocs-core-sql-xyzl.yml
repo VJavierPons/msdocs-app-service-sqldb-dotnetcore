@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-          
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
@@ -34,7 +34,7 @@ jobs:
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: dotnet install ef
-        run: dotnet tool install -g dotnet-ef
+        run: dotnet tool install -g dotnet-ef --version 7.0.0
 
       - name: dotnet bundle migration
         run: dotnet ef migrations bundle --runtime linux-x64 -p DotNetCoreSqlDb/DotNetCoreSqlDb.csproj -o \${{env.DOTNET_ROOT}}/myapp/migrate     
